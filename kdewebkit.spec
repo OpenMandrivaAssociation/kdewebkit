@@ -48,13 +48,14 @@ Development files for KDE Frameworks 5 QtWebKit integration
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+DESTDIR="%{buildroot}" ninja -C build install
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
@@ -64,4 +65,4 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
-%{_prefix}/mkspecs/*
+%{_libdir}/qt5/mkspecs/modules/*
