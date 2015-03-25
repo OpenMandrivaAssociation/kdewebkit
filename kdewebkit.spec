@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdewebkit
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Integration for QtWebKit
@@ -29,14 +29,14 @@ BuildRequires: cmake(KF5Wallet)
 BuildRequires: ninja
 
 %description
-KDE Integration for QtWebKit
+KDE Integration for QtWebKit.
 
 %package -n %{libname}
 Summary: KDE Integration for QtWebKit
 Group: System/Libraries
 
 %description -n %{libname}
-KDE Integration for QtWebKit
+KDE Integration for QtWebKit.
 
 %package -n %{devname}
 Summary: Development files for KDE Frameworks 5 QtWebKit integration
@@ -44,7 +44,7 @@ Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for KDE Frameworks 5 QtWebKit integration
+Development files for KDE Frameworks 5 QtWebKit integration.
 
 %prep
 %setup -q
