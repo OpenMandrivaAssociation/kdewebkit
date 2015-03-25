@@ -17,6 +17,7 @@ BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5Config)
