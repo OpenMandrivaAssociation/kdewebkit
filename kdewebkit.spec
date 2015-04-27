@@ -12,14 +12,10 @@ Summary: KDE Integration for QtWebKit
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5KIO)
@@ -27,7 +23,6 @@ BuildRequires: cmake(KF5JobWidgets)
 BuildRequires: cmake(KF5Parts)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Wallet)
-BuildRequires: ninja
 
 %description
 KDE Integration for QtWebKit.
@@ -49,14 +44,13 @@ Development files for KDE Frameworks 5 QtWebKit integration.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
