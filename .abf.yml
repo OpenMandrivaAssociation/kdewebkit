@@ -1,4 +1,2 @@
-removed_sources:
-  kdewebkit-5.13.0.tar.xz: 2d4a3a57064502432813a0c2df027c6041116a9c
 sources:
-  kdewebkit-5.44.0.tar.xz: 5fc7808ed04c82a315a78b4a6a83b6b2c04a4b7b
+  kdewebkit-5.46.0.tar.xz: e37f9930b2047e6447937c8da54425337bdc3933
