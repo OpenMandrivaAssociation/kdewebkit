@@ -7,7 +7,7 @@
 Name: kdewebkit
 Version:	5.60.0
 Release:	1
-Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/frameworks/portingAids/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Integration for QtWebKit
 URL: http://kde.org/
 License: GPL
