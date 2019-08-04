@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kdewebkit
-Version:	5.60.0
+Version:	5.61.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/portingAids/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: KDE Integration for QtWebKit
@@ -15,6 +15,7 @@ Group: System/Libraries
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Qt5WebKitWidgets)
+BuildRequires: cmake(Qt5Designer)
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5CoreAddons)
@@ -55,6 +56,7 @@ Development files for KDE Frameworks 5 QtWebKit integration.
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
 %{_libdir}/*.so.%{version}
+%{_libdir}/qt5/plugins/designer/kdewebkit5widgets.so
 
 %files -n %{devname}
 %{_includedir}/*
